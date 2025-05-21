@@ -1,61 +1,18 @@
 :root {
-  --font-family: "Fredoka";
-  --font-family-header: "Cherry Bomb One";
-  --font-family-header-2: "Jua";
+  --font-family: "Pixelify Sans";
+  --font-family-header: "Press Start 2P";
+  --font-family-header-2: "Pixelify Sans";
 }
 
-.sour-gummy {
-  font-family: "Sour Gummy", sans-serif;
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pixelify-sans-<uniquifier> {
+  font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
-.cherry-bomb {
-  font-family: "Cherry Bomb One", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-.dongle {
-  font-family: "Dongle", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.5rem;
-}
-.dongle i,
-.dongle span {
-  display: inline-block;
-}
-.dongle span {
-  vertical-align: bottom;
-}
-.dongle i {
-  font-size: 1rem;
-}
-
-.fredoka {
-  font-family: "Fredoka", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-.sniglet-regular {
-  font-family: "Sniglet", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.sniglet-extrabold {
-  font-family: "Sniglet", system-ui;
-  font-weight: 800;
-  font-style: normal;
-}
-.jua {
-  font-family: "Jua", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
