@@ -1,0 +1,28 @@
+#footer {
+	background-color: white;
+	border-top: var(--border);
+	border-image: var(--footer-border-img);
+	margin-top: 60px;
+	padding: 0 0 60px;
+}
+.footer-content-container {
+	border-top: var(--navbar-border);
+	padding-top: 0.5rem;
+}
+.footer-content {
+	max-width: var(--content-max-width);
+	margin: 0 auto;
+	text-align: center;
+}
+.footer-content .links a {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+}
+.footer-content .credit a {
+	border-radius: 1rem;
+}
+.footer-content .links a:hover,
+.footer-content .credit a:hover {
+	background-color: var(--peach);
+}

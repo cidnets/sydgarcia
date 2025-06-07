@@ -94,3 +94,100 @@ function backToTop() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
+//GALLERY 
+document.addEventListener('DOMContentLoaded', () => {
+
+    const galleryContainer = document.querySelector('.gallery-container');
+    // The same value as our grid-auto-rows in CSS
+    const rowHeight = 10; 
+    // The same value as our 'gap' in CSS (e.g., 1rem is often 16px)
+    const rowGap = 16; 
+
+    function resizeGridItem(item) {
+        // 'item' is now the <a> tag
+        const image = item.querySelector('img');
+        
+        const applyResize = () => {
+            // We get the height of the figure element inside the link
+            const figure = item.querySelector('.gallery-item');
+            const itemHeight = figure.clientHeight;
+            
+            // Calculate how many of our tiny rows the item needs to span
+            const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
+            
+            // Apply the style to the <a> tag itself
+            item.style.gridRowEnd = 'span ' + rowSpan;
+        };
+
+        // We need to wait for the image to load to get its true height
+        image.addEventListener('load', applyResize);
+
+        // A fallback for cached images that might not fire the 'load' event
+        if (image.complete) {
+            applyResize();
+        }
+    }
+
+    // Get all the gallery links and apply the resize function
+    const allItems = galleryContainer.querySelectorAll('.custom-lightbox-trigger');
+    allItems.forEach(resizeGridItem);
+
+});
+
+//MODAL LIGHTBOX
+// Wait for the page to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. GET ALL THE ELEMENTS WE NEED ---
+    const modal = document.querySelector('#my-modal');
+    const modalImage = modal.querySelector('.modal-image');
+    const closeButton = modal.querySelector('.modal-close-btn');
+    const overlay = modal.querySelector('.modal-overlay');
+    // Get ALL the links that should open the modal
+    const triggerLinks = document.querySelectorAll('.custom-lightbox-trigger');
+
+
+    // --- 2. FUNCTION TO OPEN THE MODAL ---
+    function openModal() {
+        modal.classList.add('modal-active');
+    }
+
+    // --- 3. FUNCTION TO CLOSE THE MODAL ---
+    function closeModal() {
+        modal.classList.remove('modal-active');
+    }
+
+
+    // --- 4. ADD EVENT LISTENERS ---
+
+    // Loop through all trigger links and add a click event
+    triggerLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // This is super important! It stops the link from going to a new page.
+            event.preventDefault(); 
+            
+            // Get the image URL from the link's href
+            const imageUrl = this.getAttribute('href');
+            
+            // Put that URL into our modal's <img> tag
+            modalImage.setAttribute('src', imageUrl);
+            
+            // Open the modal!
+            openModal();
+        });
+    });
+
+    // Add click listeners to close the modal
+    closeButton.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+
+    // Pro-tip: Also close the modal with the "Escape" key!
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+});

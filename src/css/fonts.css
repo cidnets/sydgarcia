@@ -5,6 +5,18 @@
 	--font-family-header: "Coiny";
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: var(--font-family-header);
+}
+
+a {
+	text-decoration: none;
+}
+
 .material-symbols-sharp {
   font-variation-settings:
   'FILL' 1,

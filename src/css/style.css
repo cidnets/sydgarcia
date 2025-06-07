@@ -8,33 +8,47 @@
 @import "navbar.css";
 @import "page.css";
 @import "post.css";
+@import "gallery.css";
 
 
 :root {
-  --wrapper-height: 85vh;
-  --image-max-width: 320px;
+	--wrapper-height: 85vh;
+	--image-max-width: 320px;
+	--content-max-width: 900px;
 }
 
 * {
 	box-sizing: border-box;
+	background-clip: padding-box !important;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+
 html, body {
-	font-family: var(--font-family);
 	margin: 0;
 	padding: 0;
 }
 body {
 	background-image: var(--background);
-	background-size: 100px;
+	background-size: 64px;
+	font-family: var(--font-family);
+	color: var(--color-text-main);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-	font-family: var(--font-family-header);
+.wrapper {
+	min-height: var(--wrapper-height);
+	place-items: center;
+	margin: 3rem auto 0;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	max-width: var(--content-max-width);
+	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 @media screen and (max-width: 576px) {

@@ -1,0 +1,132 @@
+.gallery-container {
+    display: grid;
+    /* This makes the grid responsive! It creates as many 250px columns as will fit,
+       and lets them grow to fill the space. */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    
+    /* This is a key part! We create a grid where the rows are tiny 10px "building blocks". */
+    grid-auto-rows: 10px; 
+    
+    gap: 1rem; /* The space between items */
+}
+
+/* We don't need much styling for the item itself in this approach,
+   but we'll tell it how to start and let the JS handle the rest. */
+.gallery-item {
+    grid-row-start: auto;
+    grid-column-start: auto;
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* You can keep all your awesome caption and hover effect styles! */
+.gallery-caption {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+    font-size: 0.9rem;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 8px 8px;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+
+/* --- Making it Responsive! --- */
+
+/* For tablets */
+@media (max-width: 800px) {
+    .gallery-container {
+        column-count: 2;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 500px) {
+    .gallery-container {
+        column-count: 1;
+    }
+}
+
+/* The main container for the modal */
+.modal-container {
+    position: fixed; /* Stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+}
+
+/* The class we'll add with JavaScript to show the modal */
+.modal-container.modal-active {
+    display: flex;
+}
+
+/* The dark background overlay */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer; /* So it looks clickable to close */
+}
+
+/* The box that holds the image */
+.modal-content {
+    position: relative; /* So we can position the close button inside it */
+    z-index: 1001; /* Appears above the overlay */
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* The image inside the modal */
+.modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: calc(90vh - 2rem); /* Fills the space but respects padding */
+    object-fit: contain; /* Ensures the whole image is visible */
+}
+
+/* The close button */
+.modal-close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1002;
+}

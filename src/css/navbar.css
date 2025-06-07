@@ -1,6 +1,220 @@
-#navbar {
-	display: block;
-	width: 100%;
+:root {
+	--navbar-border: 3px dashed #BFEBAC;
+	
+	--top-bttn-size: 3.25rem;
+	--top-bttn-color: #BFEBAC;
+	--top-bttn-border: url('/assets/Border-green.png') 33% round;
+	--top-bttn-hover: #BDE7FF;
+	--top-bttn-hover-border: url('/assets/Border-blue.png') 33% round;
+}
+.navbar-container {
 	background-color: white;
-	border-bottom: 
+	border-bottom: var(--border);
+	border-image: var(--border-white);
+}
+.navbar {
+	display: -webkit-box;
+	display: flex;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	position: relative;
+	border-bottom: var(--navbar-border);
+	color: var(--text-main);
+	padding: 0.5rem;
+	z-index: 100;
+}
+.navbar a.active {
+	background-color: var(--purple);
+	border-image: var(--border-purple);
+	color: var(--white);
+}
+.navbar a.active::before {
+	content: url("/assets/tiny-hearts-pink.png");
+}
+.navbar a.active::after {
+	content: url("/assets/tiny-hearts-peach.png");
+}
+.navbar a.active:hover {
+	cursor: default;
+}
+.logo {
+	-webkit-box-ordinal-group: 2;
+	order: 2;
+	font-size: 1.5rem;
+	margin: 0 0.5rem;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+	border-radius: 50%;
+	border: 4px double var(--accent-2);
+	background-color: var(--text);
+	outline: 2px solid var(--accent-3);
+	font-size: 0;
+	overflow: hidden;
+	text-align: center;
+}
+.logo img {
+	height: 3rem;
+	margin: 0 auto;
+}
+.logo:hover {
+	background-color: var(--text);
+}
+
+.nav-links {
+	width: 7rem;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 0.5rem;
+	padding: 0.5rem 0;
+	border: var(--border);
+	border-image: var(--border-peach);
+	background-color: var(--peach);
+	color: var(--color-text-main);
+}
+.nav-links:hover {
+	border-image: var(--border-white);
+	background-color: white;
+	color: var(--purple);
+}
+.nav-links:hover::before,
+.nav-links:hover::after {
+	margin: 0 0;
+}
+.nav-links:hover::before {
+	content: url("/assets/tiny-hearts-pink.png");
+}
+.nav-links:hover::after {
+	content: url("/assets/tiny-hearts-peach.png");
+}
+.nav-links:nth-of-type(n + 4) {
+	-webkit-box-ordinal-group: 2;
+	order: 2;
+}
+
+/* Hide the hamburger and checkbox by default on wider screens */
+.hamburger {
+	display: none;
+}
+
+.menu-toggle {
+	display: none;
+}
+
+.small-screen-logo img {
+	height: 5rem;
+	margin: 0 auto;
+}
+
+#back-to-top-bttn {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 1.5rem;
+	padding: 0 0 0.25rem;
+	width: var(--top-bttn-size);
+	height: var(--top-bttn-size);
+	text-align: center;
+	vertical-align: middle;
+	color: var(--color-text-main);
+	border: var(--border);
+	border-image: var(--top-bttn-border);
+	background: var(--top-bttn-color);
+	aspect-ratio: 1/1;
+	opacity: 0.66;
+	z-index: 1;
+}
+#back-to-top-bttn p {
+	margin: 0;
+	padding: 0;
+}
+#back-to-top-bttn:hover {
+	color: var(--color-text-main);
+	background: var(--top-bttn-hover);
+	border-image: var(--top-bttn-hover-border);
+	opacity: 1;
+}
+
+@media all and (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    position: fixed; /* Ensure relative for absolute positioning of links */
+    right: 0;
+    top: 0;
+    padding: 1rem 1rem;
+    background: none;
+  }
+
+  .logo {
+	  display: none;
+    -webkit-box-ordinal-group: 1;
+    order: 0;
+    text-align: center;
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    height: 5rem;
+  }
+  .logo img {
+    height: 5rem;
+  }
+
+  .nav-links {
+    position: relative;
+    bottom: 0.5rem;
+	width: 90vw;
+    display: none; /* Initially hide the links on small screens */
+    flex-direction: column;
+    text-align: center;
+    margin: 0 0 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .nav-links:hover {
+    outline: 3px solid white;
+  }
+
+  /* Show the hamburger */
+  .hamburger {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 50%;
+    border: 4px double var(--accent-2);
+	background-color: var(--text);
+	outline: 2px solid var(--accent-3);
+	aspect-ratio: 1/1;
+    height: 5rem;
+	line-height: 5rem;
+	font-size: 0;
+	overflow: hidden;
+	text-align: center;
+  }
+
+  .hamburger div {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+  }
+  
+   .menu-toggle {
+    position: absolute; /* Position it at the bottom */
+    bottom: 1rem;
+    transform: translateX(-50%);
+    z-index: 102; /* Ensure it's above everything */
+    opacity: 0; /* Hide the actual checkbox */
+    width: 5.5rem; /* Match hamburger size for easier interaction */
+    height: 5.5rem;
+    cursor: pointer;
+  }
+
+  /* Show the nav links when the checkbox is checked */
+  .menu-toggle:checked ~ .nav-links {
+    display: block;
+  }
 }
