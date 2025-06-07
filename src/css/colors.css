@@ -1,2 +1,51 @@
 :root {
+	--background: url('/assets/Heart-dot-bg.png');
+	--color-bg: #FFD6A5;
+	--color-text-main: #674665;
+	--color-text-header: #FFBE6B;
+	--color-primary: #BDFDFF;
+	
+	--section-divider: url("/assets/Star-Dividers.png");
+	--section-divider-color: #674665;
+  
+/* Title */
+	--title-color: #FFA46C;
+	--title-outline: #240046;
+	--title-subtitle: #FFBE6B;
+  
+/* BUTTONS */
+	--link-button-text: #674665;
+	--link-button-bg: #FFD5BD;
+  
+	--link-button-text-hover: #7DCFFF;
+	--link-button-bg-hover: #fff;
+	--hover-before: url('/assets/tiny-heart-peach.png');
+	--hover-after: url('/assets/tiny-heart-pink.png');
+  
+	--link-button-outline: #240046;
+	--button-border-img: url('/assets/Border-base.png') 33% round;
+	--button-border-img-hover: url('/assets/Border-base.png') 33% round;
+  
+	--contact-button-bg: #FDFFBD;
+	--social-button-bg: #FFD0DE;
+  
+	--contact-border-img: url('/assets/Border-base.png') 33% round;
+	--social-border-img: url('/assets/Border-base.png') 33% round;
+    
+/* Frilly Border Base */
+	--border: 7px solid transparent;
+/* Footer */
+	--footer-border-img: url('/assets/Border-base.png') 33% round;
+  
+	--footer-bg: #fff;
+  
+	--footer-links-color: #3a86ff;
+	--text-highlight: none;
+  
+/* Random Typography Things */
+	--color-text-outline: #fff;
+	--text-outline: -1px -1px 0 var(--color-text-outline),  
+    1px -1px 0 var(--color-text-outline),
+    -1px 1px 0 var(--color-text-outline),
+     1px 1px 0 var(--color-text-outline);
 }

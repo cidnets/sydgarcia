@@ -1,77 +1,62 @@
-footer {
-  position: relative;
-  bottom: 0;
-  margin: 4rem auto 0;
-  padding: 1rem 0 2rem;
-  width: 100%;
-  background-color: var(--text);
-  color: white;
-  border-top: 40px solid transparent;
-  border-image: url("/assets/Large-border-cream-reversed.png") 33% repeat;
-}
-footer .footer-content {
-  position: relative;
-  top: -4.75rem;
-  width: 100%;
-  padding: 0 1rem;
-  text-align: center;
+#navbar {
+  display: none;
 }
 
-.footer-content a {
-  font-size: 1.1rem;
+/* Navigation grid */
+.footer {
+  text-align: center;
+  margin: 100px 0 0;
+  padding: 40px 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: var(--border);
+  border-image: var(--footer-border-img);
+  background: var(--footer-bg);
+  color: var(--color-text-main);
+}
+.footer-content {
+  margin: 0 auto;
+  max-width: var(--content-max-width);
+}
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
   text-decoration: none;
   border-style: none;
 }
-.footer-content a:hover {
-  background: var(--primary);
-}
 
-
-.footer-content .links {
-  margin: 0 auto;
-  padding: 0.5rem;
+.footer .links {
+  padding: 0.5rem 1rem;
   white-space: nowrap;
-  background-color: var(--text);
-  border: 4px double var(--accent-2);
-  outline: 2px solid var(--accent-3);
-  border-radius: 1rem;
-  width: fit-content;
-}
-.footer-content .links a {
-  display: inline-block;
-  padding: 0.5rem 0;
-  width: 5rem;
-  text-align: center;
-}
-.footer-content .links a:hover {
-  background-color: transparent;
-  color: var(--accent-4);
-}
-.footer-content .links a:hover::before,
-.footer-content .links a:hover::after {
-  content: url("/assets/tiny-hearts-peach.png");
 }
 
 .divider {
   padding: 0 0.5rem;
 }
 
-footer .wooden-slats {
-  position: relative;
-  background-image: url("/assets/Wooden-slats-footer.png");
-  background-size: 150px;
-  background-repeat: repeat-x;
-  width: 100%;
-  height: 50px;
-  top: -40px;
+.credit,
+.links {
+  margin: 0 auto 0.5rem;
 }
 
-.footer-content .footer-logo {
-	width: 100%;
-	margin: 1rem 0;
-	text-align: center;
-}
-.footer-content .footer-logo img {
-	max-width: 100px;
-	margin: 0 auto;
+#footer {
+  a:not(.btn--remix) {
+    border-bottom: 2px var(--color-primary) solid;
+  }
+  a:not(.btn--remix),
+    p {
+      background: var(--text-highlight);
+      padding: 0 0.5rem;
+  }
+  p {
+    width: fit-content;
+    margin: 0 auto;
+    line-height: 1.4rem;
+  }
+  a:hover {
+    background: var(--color-primary);
+    color: var(--link-text-color);
+  }
 }

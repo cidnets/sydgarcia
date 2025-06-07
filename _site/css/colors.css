@@ -1,13 +1,50 @@
 :root {
-  --text: #7c3e68;
-  --background: #fff9f1;
-  --primary: #ff981a;
-  --secondary: #E2A7D9;
-  --accent-1: #FFB347;
-  --accent-2: #E2A7D9;
-  --accent-3: #49243c;
-  --accent-4: #9cd6aa;
-  --accent-5: #FFDBF9;
+	--background: url('/assets/Heart-dot-bg.png');
+	--color-bg: #FFD6A5;
+	--color-text-main: #674665;
+	--color-text-header: #FFBE6B;
+	--color-primary: #BDFDFF;
+	
+	--section-divider: url("/assets/Star-Dividers.png");
+	--section-divider-color: #674665;
   
-  --background-image: url("/assets/Heart-dot-bg.png");
+/* Title */
+	--title-color: #FFA46C;
+	--title-outline: #240046;
+	--title-subtitle: #FFBE6B;
+  
+/* BUTTONS */
+	--link-button-text: #674665;
+	--link-button-bg: #FFD5BD;
+  
+	--link-button-text-hover: #7DCFFF;
+	--link-button-bg-hover: #fff;
+	--hover-before: url('/assets/heart-peach.png');
+	--hover-after: url('/assets/heart-pink.png');
+  
+	--link-button-outline: #240046;
+	--button-border-img: url('/assets/Border-base.png') 33% round;
+	--button-border-img-hover: url('/assets/Border-base.png') 33% round;
+  
+	--contact-button-bg: #FDFFBD;
+	--social-button-bg: #FFD0DE;
+  
+	--contact-border-img: url('/assets/Border-base.png') 33% round;;
+	--social-border-img: url('/assets/Border-base.png') 33% round;;
+    
+/* Footer */
+	--border: 7px solid transparent;
+	--footer-border-img: url('/assets/Border-base.png') 33% round;
+  
+	--footer-bg: #fff;
+  
+	--link-text-color: #3a86ff;
+	--text-highlight: none;
+  
+/* Random Typography Things */
+	--color-text-outline: #fff;
+	--text-outline: -1px -1px 0 var(--color-text-outline),  
+    1px -1px 0 var(--color-text-outline),
+    -1px 1px 0 var(--color-text-outline),
+     1px 1px 0 var(--color-text-outline);
 }

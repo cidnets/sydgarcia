@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap');
 
 @import "reset.css";
-@import "archive.css";
 @import "colors.css";
 @import "fonts.css";
 @import "footer.css";
@@ -9,14 +8,34 @@
 @import "navbar.css";
 @import "page.css";
 @import "post.css";
-@import "posts-grid.css";
+
 
 :root {
   --wrapper-height: 85vh;
   --image-max-width: 320px;
 }
 
+* {
+	box-sizing: border-box;
+}
 
+html, body {
+	font-family: var(--font-family);
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-image: var(--background);
+	background-size: 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: var(--font-family-header);
+}
 
 @media screen and (max-width: 576px) {
  
