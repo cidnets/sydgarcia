@@ -4,7 +4,12 @@ templateClass: tmpl-home
 ---
 
 <div class="wrapper">
-	<div class="content">
+	<div class="content page">
+		{% if pageTitle%}
+		<h1>{{ pageTitle }}</h1>
+		{% else %}
+		<h1>{{ title }}</h1>
+		{% endif %}
 		{{ content | safe }}
 	</div>
 </div>

@@ -1,4 +1,4 @@
-#navbar {
+.navbar-container {
 	display: none;
 }
 footer a.footer-logo:hover {
@@ -15,6 +15,7 @@ footer p {
 footer p:not(:last-child) {
 	margin: 0.5rem auto;
 } 
-.footer-content .links a:hover {
+.footer-content .links a:hover,
+.footer-content .credit a:hover {
     background: var(--color-primary);
 }

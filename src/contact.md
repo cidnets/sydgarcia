@@ -1,9 +1,15 @@
 ---
 layout: layouts/page.njk
 title: "Contact"
-description: "How to get in touch"
+pageTitle: "Contact Me"
 ---
 
-## Want to contact me?
+## Want to get in touch?
 
-Don't.
+Feel free to email me!
+[<i class="fa-solid fa-envelope"></i>](mailto:garcia.sydneymarie@gmail.com)
+<!--{.contact-button}-->
+
+Or if you prefer to call or text...
+[<i class="fa-solid fa-phone"></i>](tel:+14086737553)
+<!--{.contact-button}-->
