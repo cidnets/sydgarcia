@@ -37,6 +37,9 @@ div.page {
 	align-items: center;
 	justify-content: center;
 }
+.contact-button i::before {
+	height: auto;
+}
 
 .self-portrait {
 	max-height: 300px;

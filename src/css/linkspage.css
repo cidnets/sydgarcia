@@ -20,6 +20,9 @@
 [hidden] {
   display: none !important;
 }
+html, body {
+	font-size: 18px;
+}
 
 /* Post */
 .post {
