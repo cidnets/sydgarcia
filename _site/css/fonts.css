@@ -18,14 +18,20 @@ h3 {
 	text-align: center;
 	margin: 0 0 1rem;
 }
+h1::before,
+h1::after {
+	width: var(--tiny-heart-size);
+	height: var(--tiny-heart-size);
+	content: '';
+}
 h1::before {
 	margin-right: 0.35rem;
-	content: url("/assets/tiny-hearts-peach.png");
+	background-image: var(--tiny-heart-peach);
 }
 
 h1::after {
 	margin-left: 0.35rem;
-	content: url("/assets/tiny-hearts-pink.png");
+	background-image: var(--tiny-heart-pink);
 }
 p {
 	margin-top: 0;

@@ -29,11 +29,17 @@
 	border-image: var(--border-purple);
 	color: var(--white);
 }
+.navbar a.active::before,
+.navbar a.active::after {
+	width: var(--tiny-heart-size);
+	height: var(--tiny-heart-size);
+	content: '';
+}
 .navbar a.active::before {
-	content: url("/assets/tiny-hearts-pink.png");
+	background-image: var(--tiny-heart-pink);
 }
 .navbar a.active::after {
-	content: url("/assets/tiny-hearts-peach.png");
+	background-image: var(--tiny-heart-peach);
 }
 .navbar a.active:hover {
 	background-image: none;
@@ -84,12 +90,15 @@
 .nav-links:hover::before,
 .nav-links:hover::after {
 	margin: 0 0;
+	width: var(--tiny-heart-size);
+	height: var(--tiny-heart-size);
+	content: '';
 }
 .nav-links:hover::before {
-	content: url("/assets/tiny-hearts-pink.png");
+	background-image: var(--tiny-heart-pink);
 }
 .nav-links:hover::after {
-	content: url("/assets/tiny-hearts-peach.png");
+	background-image: var(--tiny-heart-peach);
 }
 .nav-links:nth-of-type(n + 4) {
 	-webkit-box-ordinal-group: 2;

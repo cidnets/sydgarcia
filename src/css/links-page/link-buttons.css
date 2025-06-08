@@ -111,12 +111,15 @@
   li a:hover::before,
   li a:hover::after {
     margin: 0 1rem;
+	content: '';
+	width: 0.9rem;
+	height: 1rem;
   }
   li a:hover::before {
-    content: var(--tiny-heart-pink);
+	background-image: var(--tiny-heart-pink);
   }
   li a:hover::after {
-    content: var(--tiny-heart-pink);
+    background-image: var(--tiny-heart-pink);
   }
   h1 {
     margin: auto;

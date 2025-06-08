@@ -21,7 +21,10 @@
 }
 *::before, *::after {
 	display: inline-block;
-	height: 16px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	text-align: center;
 }
 
 [hidden] {
