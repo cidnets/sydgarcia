@@ -1,4 +1,5 @@
 console.log("hello, world!");
+console.log("sup bitch?");
 
 // $(document).ready(function() {
 //  $('.hamburger').click(function() {
