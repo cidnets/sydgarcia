@@ -1,56 +1,122 @@
 [
   {
-    "title": "Blog 1",
-    "alt_text": "An abstract painting with swirling blues and golds representing a nebula.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-1.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-1.jpg"
+    "title": "Whitewashed",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-Whitewashed-Catalog-4.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-Whitewashed-Catalog-4.jpg"
   },
   {
-    "title": "Blog 2",
-    "alt_text": "A serene watercolor of sunlight filtering through tall green pine trees.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-2.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-2.jpg"
+    "title": "Assimilated",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-Whitewashed-Catalog-2.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-Whitewashed-Catalog-2.jpg"
   },
   {
-    "title": "Blog 3",
-    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-3.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-3.jpg"
+    "title": "A Lullaby",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-Whitewashed-Catalog-3.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-Whitewashed-Catalog-3.jpg"
   },
   {
-    "title": "Blog 4",
-    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-4.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-4.jpg"
+    "title": "Banana",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-Whitewashed-Catalog-1.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-Whitewashed-Catalog-1.jpg"
   },
   {
-    "title": "Blog 5",
-    "alt_text": "An abstract painting with swirling blues and golds representing a nebula.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-5.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-5.jpg"
+    "title": "Sneaky Sue",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-SneakySue.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-SneakySue.jpg"
   },
   {
-    "title": "Blog 6",
-    "alt_text": "A serene watercolor of sunlight filtering through tall green pine trees.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-6.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-6.jpg"
+    "title": "Ebenezer's Ice Cream Store",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-IceCream.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-IceCream.jpg"
   },
   {
-    "title": "Blog 7",
-    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-7.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-7.jpg"
+    "title": "A Conversation with a Caterpillar",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/SGarcia-caterpillar.jpg",
+    "fullsize_url": "/assets/art/traditional/SGarcia-caterpillar.jpg"
   },
   {
-    "title": "Blog 8",
-    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-8.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-8.jpg"
+    "title": "Portal 03",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/portal-3.jpg",
+    "fullsize_url": "/assets/art/traditional/portal-3.jpg"
   },
   {
-    "title": "Blog 9",
-    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
-    "thumbnail_url": "/assets/art/traditional/thumb/blog-9.jpg",
-    "fullsize_url": "/assets/art/traditional/blog-9.jpg"
+    "title": "Portal 02",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/portal-2.jpg",
+    "fullsize_url": "/assets/art/traditional/portal-2.jpg"
+  },
+  {
+    "title": "Portal 01",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/portal-1.jpg",
+    "fullsize_url": "/assets/art/traditional/portal-1.jpg"
+  },
+  {
+    "title": "A Page",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/a-page.jpg",
+    "fullsize_url": "/assets/art/traditional/a-page.jpg"
+  },
+  {
+    "title": "A Sentence",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/a-sentence.jpg",
+    "fullsize_url": "/assets/art/traditional/a-sentence.jpg"
+  },
+  {
+    "title": "A Word",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/a-word.jpg",
+    "fullsize_url": "/assets/art/traditional/a-word.jpg"
+  },
+    {
+    "title": "Untitled 3",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/untitled-3.jpg",
+    "fullsize_url": "/assets/art/traditional/untitled-3.jpg"
+  },
+    {
+    "title": "Untitled 2",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/untitled-2.jpg",
+    "fullsize_url": "/assets/art/traditional/untitled-2.jpg"
+  },
+    {
+    "title": "Untitled 1",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/untitled-1.jpg",
+    "fullsize_url": "/assets/art/traditional/untitled-1.jpg"
+  },
+  {
+    "title": "Self Portrait 01",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/selfportrait-1.jpg",
+    "fullsize_url": "/assets/art/traditional/selfportrait-1.jpg"
+  },
+  {
+    "title": "Self Portrait 02",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/selfportrait-2.jpg",
+    "fullsize_url": "/assets/art/traditional/selfportrait-2.jpg"
+  },
+  {
+    "title": "Still Life 01",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/still-life-ROCKS.jpg",
+    "fullsize_url": "/assets/art/traditional/still-life-ROCKS.jpg"
+  },
+  {
+    "title": "Still Life 02",
+    "alt_text": ".",
+    "thumbnail_url": "/assets/art/traditional/thumb/still-life-1.jpg",
+    "fullsize_url": "/assets/art/traditional/still-life-1.jpg"
   }
 ]
