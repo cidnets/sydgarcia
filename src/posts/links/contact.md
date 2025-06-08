@@ -10,5 +10,5 @@ layout: layouts/post.njk
 
 # Contact me!
 
-- [<i class="fa-solid fa-phone"></i>]()
-- [<i class="fa-solid fa-envelope"></i>](mailto:cidnets.no@gmail.com)
+- [<i class="fa-solid fa-phone"></i>](tel:+14086737553)
+- [<i class="fa-solid fa-envelope"></i>](mailto:garcia.sydneymarie@gmail.com)

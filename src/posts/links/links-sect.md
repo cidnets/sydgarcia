@@ -10,8 +10,8 @@ layout: layouts/post.njk
 
 # Check out my work!
 
-- [<i class="fa-solid fa-palette"></i>Digital Works](https://cidnets.glitch.me)
-- [<i class="fa-solid fa-paintbrush"></i>Traditional Works](https://sydgarcia.glitch.me/)
+- [<i class="fa-solid fa-palette"></i>Digital Works](/digital)
+- [<i class="fa-solid fa-paintbrush"></i>Traditional Works](/)
 
 # Want to support me?
 

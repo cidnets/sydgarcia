@@ -3,8 +3,20 @@
 :root {
   --font-family: "Gamja Flower";
   --font-family-header: "Coiny";
+  
+  --color-text-main: #674665;
+  --color-text-header: #FFBE6B;
+  --color-primary: #BDFDFF;
+  
+  /* Title */
+  --title-color: #FFA46C;
+  --title-outline: #240046;
+  --title-subtitle: #FFBE6B;
 }
 
+h1 {
+	color: var(--title-color);
+}
 h1::before,
 h1::after {
 	content: none;

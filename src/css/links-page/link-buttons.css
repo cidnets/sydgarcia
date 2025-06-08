@@ -1,27 +1,13 @@
 :root {
   --section-header-font-size: 1.1rem;
+  
+  --link-button-bg: #FFD5BD;
+  --link-button-text-hover: #7DCFFF;
+  --link-button-bg-hover: #fff;
+  
   --button-max-width: 300px;
   --button-hover-bg: url('/assets/white-dot-border.png');
   --button-hover-border: url('/assets/Border-base.png');
-}
-
-[data-border-style="borderBlue"] {
-	border-image-source: url('/assets/Border-blue.png');
-}
-[data-border-style="borderGreen"] {
-	border-image-source: url('/assets/Border-green.png');
-}
-[data-border-style="borderPeach"] {
-	border-image-source: url('/assets/Border-peach.png');
-}
-[data-border-style="borderPink"] {
-	border-image-source: url('/assets/Border-pink.png');
-}
-[data-border-style="borderPurple"] {
-	border-image-source: url('/assets/Border-purple.png');
-}
-[data-border-style="borderYellow"] {
-	border-image-source: url('/assets/Border-yellow.png');
 }
 
 #contact,
@@ -35,7 +21,7 @@
   }
   li a {
     display: block;
-    color: var(--link-button-text);
+    color: var(--color-text-main);
     border: var(--border);
 	border-image-slice: 33%;
 	border-image-repeat: round;
@@ -61,6 +47,25 @@
     text-shadow: var(--text-outline);
     max-width: var(--button-max-width);
   }
+  
+	[data-border-style="borderBlue"] {
+	border-image-source: url('/assets/Border-blue.png');
+	}
+	[data-border-style="borderGreen"] {
+	border-image-source: url('/assets/Border-green.png');
+	}
+	[data-border-style="borderPeach"] {
+	border-image-source: url('/assets/Border-peach.png');
+	}
+	[data-border-style="borderPink"] {
+	border-image-source: url('/assets/Border-pink.png');
+	}
+	[data-border-style="borderPurple"] {
+	border-image-source: url('/assets/Border-purple.png');
+	}
+	[data-border-style="borderYellow"] {
+	border-image-source: url('/assets/Border-yellow.png');
+	}
 }
 #contact,
 #socials {
@@ -108,10 +113,10 @@
     margin: 0 1rem;
   }
   li a:hover::before {
-    content: var(--hover-before);
+    content: var(--tiny-heart-pink);
   }
   li a:hover::after {
-    content: var(--hover-after);
+    content: var(--tiny-heart-pink);
   }
   h1 {
     margin: auto;
