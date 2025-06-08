@@ -12,6 +12,21 @@ h4,
 h5 {
 	font-family: var(--font-family-header);
 }
+h1,
+h2,
+h3 {
+	text-align: center;
+}
+h1::before {
+	margin-right: 0.35rem;
+	content: url("/assets/tiny-hearts-peach.png");
+}
+
+h1::after {
+	margin-left: 0.35rem;
+	content: url("/assets/tiny-hearts-pink.png");
+}
+
 
 a {
 	text-decoration: none;

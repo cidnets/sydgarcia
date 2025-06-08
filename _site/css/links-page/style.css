@@ -1,0 +1,176 @@
+@import "/public/links/colors.css";
+@import "/public/links/fonts.css";
+@import "/public/links/footer.css";
+@import "/public/links/link-buttons.css";
+@import "/public/links/links-bs.css";
+@import "/public/links/page.css";
+@import "/public/links/title.css";
+
+:root {
+  --wrapper-height: 85vh;
+  --image-max-width: 320px;
+  --content-max-width: 500px;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+/* Page structure */
+html,
+body {
+  margin: 0;
+  font-size: 17px;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+}
+.wrapper {
+  min-height: var(--wrapper-height);
+  place-items: center;
+  margin: 3rem auto 0;
+  max-width: var(--content-max-width);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.background-img {
+  background: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Heart-dot-bg.png?v=1739544328329");
+  background-size: 64px;
+  image-rendering: pixelated;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+img {
+  image-rendering: pixelated;
+}
+
+/* Typography */
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-family: var(--font-family-header);
+  font-weight: normal;
+  line-height: 1.1;
+  color: var(--color-text-main);
+}
+h1 {
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 2rem;
+  color: var(--color-text-header);
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+ul > li,
+ol > li {
+  line-height: 1.5;
+}
+ul {
+  padding: 0 0 0 18px;
+  margin: 0;
+}
+ul.no-bullet {
+  list-style-type: none;
+}
+
+/* LINK STYLES */
+a,
+button {
+  cursor: pointer;
+}
+a:hover {
+  background: var(--color-primary);
+}
+
+/* Title style adjustments */
+.title-lg {
+  color: var(--color-text-main);
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.title-md {
+  font-size: 56px;
+}
+
+/* Layout: Home */
+.home {
+  justify-content: left;
+}
+
+/* Post */
+.post {
+  place-items: normal;
+}
+.postTitle {
+  font-size: 4rem;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.controls {
+  margin: 3rem 0 2rem;
+}
+button img {
+    pointer-events: none;
+  }
+
+section:not(:last-child)::after,
+ul:not(:last-child):not(.page-content ul)::after {
+  display: block;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+  font-family: var(--font-family);
+  color: var(--section-divider-color);
+  content: var(--section-divider);
+}

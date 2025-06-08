@@ -67,9 +67,10 @@ a.custom-lightbox-trigger {
 }
 
 /* For mobile phones */
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     .gallery-container {
         column-count: 1;
+		grid-auto-rows: auto;
     }
 }
 

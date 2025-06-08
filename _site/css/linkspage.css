@@ -1,0 +1,50 @@
+@import "reset.css";
+@import "/css/links-page/colors.css";
+@import "/css/links-page/fonts.css";
+@import "/css/links-page/footer.css";
+@import "/css/links-page/link-buttons.css";
+@import "/css/links-page/links-bs.css";
+@import "/css/links-page/page.css";
+@import "/css/links-page/title.css";
+
+:root {
+  --wrapper-height: 85vh;
+  --image-max-width: 320px;
+  --content-max-width: 500px;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Post */
+.post {
+  place-items: normal;
+}
+.postTitle {
+  font-size: 4rem;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.controls {
+  margin: 3rem 0 2rem;
+}
+button img {
+    pointer-events: none;
+  }
+
+section:not(:last-child)::after,
+ul:not(:last-child):not(.page-content ul)::after {
+  display: block;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+  font-family: var(--font-family);
+  color: var(--section-divider-color);
+  content: var(--section-divider);
+  text-align: center;
+}

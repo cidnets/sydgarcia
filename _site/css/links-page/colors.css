@@ -1,0 +1,50 @@
+:root {
+  --color-bg: #FFD6A5;
+  
+  --color-text-main: #674665;
+  --color-text-header: #FFBE6B;
+  --color-primary: #BDFDFF;
+  
+  --section-divider: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Section-dividers.png?v=1739552514192");
+  --section-divider-color: #674665;
+  
+/* Title */
+  --title-color: #FFA46C;
+  --title-outline: #240046;
+  --title-subtitle: #FFBE6B;
+  
+/* BUTTONS */
+  --link-button-text: #674665;
+  --link-button-bg: #FFD5BD;
+  
+  --link-button-text-hover: #7DCFFF;
+  --link-button-bg-hover: #fff;
+  --hover-before: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/tiny-heart-pink.png?v=1739553754628");
+  --hover-after: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/tiny-heart-pink.png?v=1739553754628");
+  
+  --link-button-outline: #240046;
+  --button-border-img: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Border-peach.png?v=1739552099141") 33% round;
+  --button-border-img-hover: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Border-base.png?v=1739550063869") 33% round;
+  
+  --contact-button-bg: #FDFFBD;
+  --social-button-bg: #FFD0DE;
+  
+  --contact-border-img: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Border-yellow.png?v=1739552106795") 33% round;;
+  --social-border-img: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Border-pink.png?v=1739552104175") 33% round;;
+    
+/* Footer */
+  --border: 7px solid transparent;
+  --footer-border-img: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Border-base.png?v=1739550063869") 33% round;
+  
+  --footer-bg: #fff;
+  
+  --link-text-color: #3a86ff;
+  --text-highlight: none;
+  
+/* Random Typography Things */
+  --color-text-outline: #fff;
+  --text-outline: -1px -1px 0 var(--color-text-outline),  
+    1px -1px 0 var(--color-text-outline),
+    -1px 1px 0 var(--color-text-outline),
+     1px 1px 0 var(--color-text-outline);
+}

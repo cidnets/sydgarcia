@@ -11,68 +11,47 @@ console.log("sup bitch?");
 
 // Random Border Images
 document.addEventListener('DOMContentLoaded', function() {
-  const postGrids = document.querySelectorAll('.posts-grid');
+    // Select all containers with the .posts-grid class
+    const postGrids = document.querySelectorAll('.links-links');
 
-  const borderStyles = [
-{ url: 'url("/assets/Border-orange-3.png")', backgroundColor: '#ffc97d' }, //light orange
-  { url: 'url("/assets/Border-peach.png")', backgroundColor: '#ffd5bd' }, //peach
-  { url: 'url("/assets/Border-pink.png")', backgroundColor: '#ffd1de' }, //pink
-  { url: 'url("/assets/Border-lpurple.png")', backgroundColor: '#faceff' }, //light purple
-  { url: 'url("/assets/Border-yellow.png")', backgroundColor: '#fff6bd' }, //yellow
-  { url: 'url("/assets/Border-base.png")', backgroundColor: '#ffffff' }, //white
-    // Add as many unique image/color pairs as you like!
-  ];
+    // Our "Art Palette" of styles! 🎨
+    // Each object has the image URL and its matching background color.
+    const borderStyles = [
+        { id: 'borderBlue', url: 'url("/assets/Border-blue.png")', backgroundColor: '#BDE7FF' },
+        { id: 'borderGreen', url: 'url("/assets/Border-green.png")', backgroundColor: '#BFEBAC' },
+        { id: 'borderPeach', url: 'url("/assets/Border-peach.png")', backgroundColor: '#FFD5BD' },
+        { id: 'borderPink', url: 'url("/assets/Border-pink.png")', backgroundColor: '#FFD0DE' },
+		{ id: 'borderPurple', url: 'url("/assets/Border-purple.png")', backgroundColor: '#F1CBFF' },
+		{ id: 'borderYellow', url: 'url("/assets/Border-yellow.png")', backgroundColor: '#FDFFBD' },
+        // Add as many unique image/color pairs as you like!
+    ];
 
-  postGrids.forEach(grid => {
-    const listItems = grid.querySelectorAll('li a');
-    let usedColors = []; // Keep track of colors used in this grid
+    postGrids.forEach(grid => {
+        // Find all the links we want to style inside this grid
+        const linksToStyle = grid.querySelectorAll('li a');
+        
+        // This makes a "copy" of our styles that we can safely remove items from
+        let availableStyles = [...borderStyles];
 
-    listItems.forEach(listItem => {
-      if (borderStyles.length > 0) {
-        let randomIndex;
-        let randomStyle;
+        // This is the updated part of your JS script
+		linksToStyle.forEach(link => {
+			if (availableStyles.length === 0) {
+				availableStyles = [...borderStyles];
+			}
 
-        // Keep picking a random style until we find one with an unused color
-        do {
-          randomIndex = Math.floor(Math.random() * borderStyles.length);
-          randomStyle = borderStyles[randomIndex];
-        } while (usedColors.includes(randomStyle.backgroundColor) && usedColors.length < borderStyles.length);
+			const randomIndex = Math.floor(Math.random() * availableStyles.length);
+			const randomStyle = availableStyles[randomIndex];
 
-        listItem.style.borderImageSource = randomStyle.url;
-        listItem.style.borderImageSlice = '33%'; // Adjust as needed
-        listItem.style.borderWidth = '8px'; // Adjust as needed
-        listItem.style.borderImageRepeat = 'round'; // Or 'stretch', 'round', etc.
-        listItem.style.borderStyle = 'solid'; // Fallback
-        listItem.style.backgroundColor = randomStyle.backgroundColor;
+			// THIS IS THE BIG CHANGE!
+			// Instead of setting link.style, we set a data attribute.
+			link.dataset.borderStyle = randomStyle.id; 
+    
+			// We can still set the background color here if we want.
+			link.style.backgroundColor = randomStyle.backgroundColor;
 
-        usedColors.push(randomStyle.backgroundColor); // Mark this color as used
-
-        // If we've used all the styles, you might want to reset the usedColors array
-        if (usedColors.length === borderStyles.length) {
-          usedColors = [];
-        }
-      }
+			availableStyles.splice(randomIndex, 1);
+		});
     });
-  });
-  
-  function hideCutOffLinesJQuery() {
-  $('.posts-grid li a').each(function() { // Replace with your container selector
-    const $container = $(this);
-    const lineHeight = parseFloat($container.css('line-height'));
-    const containerHeight = $container.outerHeight();
-    const textHeight = this.scrollHeight;
-
-    if (textHeight > containerHeight) {
-      const fittingLines = Math.floor(containerHeight / lineHeight);
-      if (Math.ceil(textHeight / lineHeight) > fittingLines) {
-        $container.hide(); // Or $container.empty();
-      }
-    }
-  });
-}
-
-$(document).ready(hideCutOffLinesJQuery);
-$(window).on('resize', hideCutOffLinesJQuery);
 });
 
 //BACK TO TOP BUTTON

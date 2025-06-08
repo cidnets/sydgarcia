@@ -197,6 +197,7 @@
     position: relative;
     top: 0.5rem;
 	width: 90vw;
+	height: auto;
     display: none; /* Initially hide the links on small screens */
     flex-direction: column;
     text-align: center;
