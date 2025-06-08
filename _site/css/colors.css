@@ -34,6 +34,8 @@
 	--pink: #FFD0DE;
 	--purple: #F1CBFF;
 	--yellow: #FDFFBD;
+	--white-dot-bg: url('/assets/white-dot-border.png');
+	--purple-2: #d39ee7;
 	
 /* Footer */
 	--footer-border-img: url('/assets/Border-base.png') 33% round;

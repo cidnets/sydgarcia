@@ -36,6 +36,7 @@
 	content: url("/assets/tiny-hearts-peach.png");
 }
 .navbar a.active:hover {
+	background-image: none;
 	cursor: default;
 }
 .logo {
@@ -77,7 +78,8 @@
 .nav-links:hover {
 	border-image: var(--border-white);
 	background-color: white;
-	color: var(--purple);
+	background-image: var(--white-dot-bg);
+	color: var(--purple-2);
 }
 .nav-links:hover::before,
 .nav-links:hover::after {

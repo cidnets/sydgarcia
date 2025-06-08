@@ -19,6 +19,10 @@
 	box-sizing: border-box;
 	background-clip: padding-box !important;
 }
+*::before, *::after {
+	display: inline-block;
+	height: 16px;
+}
 
 [hidden] {
   display: none !important;
