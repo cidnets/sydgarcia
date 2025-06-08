@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Coiny&family=DynaPuff:wght@400..700&family=Gamja+Flower&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=DynaPuff:wght@400..700&family=Gamja+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
 	--font-family: "Sour Gummy";
@@ -94,4 +94,18 @@ a {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.josefin-slab {
+  font-family: "Josefin Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
