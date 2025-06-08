@@ -16,17 +16,28 @@
   
 <body>
     <div class="navbar-container">
+	<div class="small-screen-logo-container">
+		<a  href="/"  class="small-screen-logo">
+		<img src="/assets/sydgarcia-heart.svg"/>
+	</a>
+	</div>
 <div class="navbar" id="navbar">
 	<a  href="/"  class="logo">
-		<img src="/assets/heart-peach.png"/>
+		<img src="/assets/sydgarcia-heart.svg"/>
 	</a>
    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-   <label for="menu-toggle" class="hamburger small-screen-logo">
-		<a><img src="/assets/g141.png"/></a>
+   <label for="menu-toggle" class="hamburger">
+		<a>
+			<div class="poor-mans-hamburger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</a>
    </label>
-   <a href="/" class="nav-links ">Home</a>
+   <a href="/" class="nav-links ">Traditional</a>
+   <a href="/digital" class="nav-links ">Digital</a>
    <a href="/about" class="nav-links ">About</a>
-   <a href="/archive" class="nav-links ">Archive</a>
    <a href="/contact" class="nav-links ">Contact</a>
 </div>
 </div>
@@ -75,6 +86,12 @@
   <footer id='footer' class="footer">
 	<div class="footer-content-container">
 <div class="footer-content">
+	<div>
+		<a  href="/"  class="footer-logo">
+			<img src="/assets/sydgarcia-heart.svg"/>
+		</a>
+	</div>
+	
     <div class="links">
 		<a href="/">Home</a>
 		<span class="divider">|</span>
@@ -82,9 +99,13 @@
 		<span class="divider">|</span>
 		<a href="/links">Links</a>
     </div>
+
     <div class="credit">
 		<p>
 			Coded &amp Designed by <a href="https://sydgarcia.pages.dev/links/">Syd Garcia @Cidnets</a>
+		</p>
+		<p>
+			&copy; 2019–<span id="copyright-year"></span> Syd Garcia @Cidnets. All Rights Reserved.
 		</p>
     </div>
 </div>

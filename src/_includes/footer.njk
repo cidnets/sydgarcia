@@ -1,5 +1,11 @@
 <div class="footer-content-container">
 <div class="footer-content">
+	<div>
+		<a {% if page.url == '/' %} href="#" {% else %} href="/" {% endif %} class="footer-logo">
+			<img src="/assets/sydgarcia-heart.svg"/>
+		</a>
+	</div>
+	
     <div class="links">
 		<a href="/">Home</a>
 		<span class="divider">|</span>
@@ -7,9 +13,13 @@
 		<span class="divider">|</span>
 		<a href="/links">Links</a>
     </div>
+
     <div class="credit">
 		<p>
 			Coded &amp Designed by <a href="https://sydgarcia.pages.dev/links/">Syd Garcia @Cidnets</a>
+		</p>
+		<p>
+			&copy; 2019–<span id="copyright-year"></span> Syd Garcia @Cidnets. All Rights Reserved.
 		</p>
     </div>
 </div>

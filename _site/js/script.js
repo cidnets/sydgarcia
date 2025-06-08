@@ -96,6 +96,11 @@ function backToTop() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+//COPYRIGHT
+    const copyrightYearSpan = document.getElementById('copyright-year');
+    const currentYear = new Date().getFullYear();
+    copyrightYearSpan.textContent = currentYear;
+
 
 //GALLERY 
 document.addEventListener('DOMContentLoaded', () => {

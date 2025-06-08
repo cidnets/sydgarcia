@@ -1,13 +1,17 @@
+:root {
+	--small-screen-footer-padding: 1rem;
+}
+
 #footer {
 	background-color: white;
 	border-top: var(--border);
 	border-image: var(--footer-border-img);
 	margin-top: 60px;
-	padding: 0 0 60px;
+	padding: 0;
 }
 .footer-content-container {
 	border-top: var(--navbar-border);
-	padding-top: 0.5rem;
+	padding: 40px 0 80px;
 }
 .footer-content {
 	max-width: var(--content-max-width);
@@ -25,4 +29,21 @@
 .footer-content .links a:hover,
 .footer-content .credit a:hover {
 	background-color: var(--peach);
+}
+.footer-content .footer-logo {
+	display: block;
+	height: 40px;
+	margin: 0 0 1.5rem;
+	text-align: center;
+}
+.footer-content .footer-logo img {
+	height: 100%;
+	margin: 0 auto;
+}
+
+@media all and (max-width: 576px) {
+	.footer-content-container {
+		padding-left: var(--small-screen-footer-padding);
+		padding-right: var(--small-screen-footer-padding);
+	}
 }

@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Blog 1",
+    "alt_text": "An abstract painting with swirling blues and golds representing a nebula.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-1.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-1.jpg"
+  },
+  {
+    "title": "Blog 2",
+    "alt_text": "A serene watercolor of sunlight filtering through tall green pine trees.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-2.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-2.jpg"
+  },
+  {
+    "title": "Blog 3",
+    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-3.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-3.jpg"
+  },
+  {
+    "title": "Blog 4",
+    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-4.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-4.jpg"
+  },
+  {
+    "title": "Blog 5",
+    "alt_text": "An abstract painting with swirling blues and golds representing a nebula.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-5.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-5.jpg"
+  },
+  {
+    "title": "Blog 6",
+    "alt_text": "A serene watercolor of sunlight filtering through tall green pine trees.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-6.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-6.jpg"
+  },
+  {
+    "title": "Blog 7",
+    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-7.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-7.jpg"
+  },
+  {
+    "title": "Blog 8",
+    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-8.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-8.jpg"
+  },
+  {
+    "title": "Blog 9",
+    "alt_text": "A cityscape portrait with warm orange and purple tones as the sun sets.",
+    "thumbnail_url": "/assets/art/traditional/thumb/blog-9.jpg",
+    "fullsize_url": "/assets/art/traditional/blog-9.jpg"
+  }
+]
