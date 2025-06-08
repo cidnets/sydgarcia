@@ -1,33 +1,39 @@
+/* --- The Main Gallery Container --- */
 .gallery-container {
     display: grid;
-    /* This makes the grid responsive! It creates as many 250px columns as will fit,
-       and lets them grow to fill the space. */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    
-    /* This is a key part! We create a grid where the rows are tiny 10px "building blocks". */
     grid-auto-rows: 10px; 
-    
-    gap: 1rem; /* The space between items */
+    gap: 1rem;
 }
 
-/* We don't need much styling for the item itself in this approach,
-   but we'll tell it how to start and let the JS handle the rest. */
-.gallery-item {
-    grid-row-start: auto;
-    grid-column-start: auto;
-	position: relative;
-	margin: 0;
-	overflow: hidden;
-	height: 100%;
+/* --- The Link Tag (Our Grid Item) --- */
+/* We target it by the class we set up for our custom lightbox */
+a.custom-lightbox-trigger {
+    display: flex; /* This is a key! Makes the link a flex container. */
+    overflow: hidden; /* Safety measure to clip anything that peeks out. */
+    border-radius: 8px; /* Give the link itself the border-radius. */
 }
 
+/* --- The Figure Element --- */
+.gallery-item { /* This is our <figure> tag */
+    flex: 1; /* This tells the figure to GROW and fill all available space! */
+    margin: 0; /* Resets any default browser margin on the figure. */
+    display: flex; /* Makes the figure a flex container too for the image. */
+    position: relative; /* Still needed for our absolute-positioned caption! */
+}
+
+/* --- The Image (The Big Finale!) --- */
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%; /* Tells the image to fill the figure completely. */
+    
+    /* The magic that PREVENTS STRETCHING! */
+    object-fit: cover; 
+    
     display: block;
-    border-radius: 8px;
 }
 
+/* --- The Caption --- */
 /* You can keep all your awesome caption and hover effect styles! */
 .gallery-caption {
 	position: absolute;
