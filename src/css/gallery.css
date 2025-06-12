@@ -5,6 +5,7 @@
 .gallery-container {
 	margin-top: 1rem;
     display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 10px; 
     gap: 1rem;
 }
@@ -62,14 +63,9 @@ a.custom-lightbox-trigger {
 /* --- Making it Responsive! --- */
 
 /* For tablets */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1200px) {
 	.gallery-container {
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	}
-}
-@media screen and (max-width: 719px) {
-	.gallery-container {
-		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 @media (max-width: 800px) {
