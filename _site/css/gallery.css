@@ -132,7 +132,7 @@ a.custom-lightbox-trigger {
     object-fit: contain; /* Ensures the whole image is visible */
 }
 .modal-img-info {
-	position: absolute;
+	position: relative;
 	display: none;
 	padding: 1.5rem 1rem;
 	text-align: center;
@@ -156,6 +156,7 @@ a.custom-lightbox-trigger {
 	display: block;
 }
 .modal-buttons {
+	display: flex;
 	position: absolute;
 	top: 0;
 	right: 0;
