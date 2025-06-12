@@ -1,8 +1,11 @@
 /* --- The Main Gallery Container --- */
+.content:has(.gallery-container) {
+	max-width: 90vw;
+}
 .gallery-container {
 	margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(calc((100% - 3rem) / 4), 1fr));
     grid-auto-rows: 10px; 
     gap: 1rem;
 }

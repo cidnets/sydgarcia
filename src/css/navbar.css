@@ -28,7 +28,7 @@
 	-webkit-box-ordinal-group: 2;
 	order: 2;
 	font-size: 1.5rem;
-	margin: 0 0.5rem;
+	margin: 0 1rem;
 	cursor: pointer;
 	border: 4px double var(--accent-2);
 	background-color: var(--text);
