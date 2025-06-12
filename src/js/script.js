@@ -30,6 +30,28 @@ console.log("sup bitch?");
       menuToggle.checked = false;
     });
   });
+  
+//BACK TO TOP BUTTON
+// Get the button:
+let mybutton = document.getElementById("back-to-top-bttn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function backToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+// END UNIVERSAL PAGE FX
 
 // Random Border Images
 document.addEventListener('DOMContentLoaded', function() {
@@ -76,27 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//BACK TO TOP BUTTON
-// Get the button:
-let mybutton = document.getElementById("back-to-top-bttn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function backToTop() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
 //GALLERY 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -138,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //MODAL LIGHTBOX
-// Wait for the page to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. GET ALL THE ELEMENTS WE NEED ---
@@ -146,35 +146,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImage = modal.querySelector('.modal-image');
     const closeButton = modal.querySelector('.modal-close-btn');
     const overlay = modal.querySelector('.modal-overlay');
-    // Get ALL the links that should open the modal
     const triggerLinks = document.querySelectorAll('.custom-lightbox-trigger');
 
+    // -- Our NEW elements for the info --
+    const infoTrigger = document.querySelector('.modal-info-trigger');
+    const infoPanel = document.querySelector('.modal-img-info');
+    const modalTitle = document.querySelector('#modal-title');
+    const modalDate = document.querySelector('#modal-date');
+    const modalMedium = document.querySelector('#modal-medium');
+    const modalSize = document.querySelector('#modal-size');
 
-    // --- 2. FUNCTION TO OPEN THE MODAL ---
+
+    // --- 2. FUNCTIONS TO OPEN/CLOSE THE MODAL ---
     function openModal() {
         modal.classList.add('modal-active');
     }
 
-    // --- 3. FUNCTION TO CLOSE THE MODAL ---
     function closeModal() {
         modal.classList.remove('modal-active');
+        // Hide the info panel when the modal closes
+        infoPanel.classList.remove('is-visible'); 
     }
 
 
-    // --- 4. ADD EVENT LISTENERS ---
+    // --- 3. ADD EVENT LISTENERS ---
 
     // Loop through all trigger links and add a click event
     triggerLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            // This is super important! It stops the link from going to a new page.
-            event.preventDefault(); 
+            event.preventDefault(); // Stop the link from navigating
+
+            // --- THIS IS THE NEW MAGIC! ---
+            // Get all the data from the link's "data backpack"
+            const title = this.dataset.title;
+            const date = this.dataset.date;
+            const medium = this.dataset.medium;
+            const size = this.dataset.size;
             
-            // Get the image URL from the link's href
+            // Get the image URL
             const imageUrl = this.getAttribute('href');
-            
-            // Put that URL into our modal's <img> tag
+
+            // --- UPDATE THE MODAL CONTENT ---
             modalImage.setAttribute('src', imageUrl);
-            
+            modalTitle.textContent = title;
+            modalDate.textContent = date;
+            modalMedium.textContent = medium;
+            modalSize.textContent = size;
+
             // Open the modal!
             openModal();
         });
@@ -184,11 +202,15 @@ document.addEventListener('DOMContentLoaded', () => {
     closeButton.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
 
+    // Listener for the info button
+    infoTrigger.addEventListener('click', () => {
+        infoPanel.classList.toggle('is-visible');
+    });
+
     // Pro-tip: Also close the modal with the "Escape" key!
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeModal();
         }
     });
-
 });

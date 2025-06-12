@@ -1,6 +1,6 @@
 ---
 layout: layouts/digital.njk
-title: "Homepage"
+title: "Digital"
 ---
 
 # Digital Works

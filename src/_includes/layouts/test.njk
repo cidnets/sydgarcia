@@ -6,16 +6,12 @@ templateClass: tmpl-home
 
 <div class="wrapper home">
 	<div class="content">
-		<div>
-			{{ content | safe }}
-		</div>
+		{{ content | safe }}
 		<div class="gallery-container">
-			{% for art in traditional %}
+			{% for art in digital %}
 			{% include "portfolio/gallery.njk" %}
 			{% endfor %}
 		</div>
-		{% for art in traditional %}
 		{% include "portfolio/gallery-modal.njk" %}
-		{% endfor %}
 	</div>
 </div>

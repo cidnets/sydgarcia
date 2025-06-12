@@ -1,26 +1,20 @@
 ---
 layout: layouts/base.njk
 templateClass: tmpl-home
-title: Hello!
-description: This is the homepage
+
 ---
 
-{# The Home page uses this template–it extends the base template #}
 
 <div class="wrapper home">
 	<div class="content">
 		<div>
 			{{ content | safe }}
-			
-			{% include "portfolio/digital-gallery.njk" %}
 		</div>
+		<div class="gallery-container">
+			{% for art in digital %}
+			{% include "portfolio/gallery.njk" %}
+			{% endfor %}
+		</div>
+		{% include "portfolio/gallery-modal.njk" %}
 	</div>
-</div>
-
-<div class="modal-container" id="my-modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
-        <img src="" alt="Full-size artwork" class="modal-image">
-    </div>
 </div>
