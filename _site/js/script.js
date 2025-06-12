@@ -1,35 +1,31 @@
+// PASTE THIS ENTIRE BLOCK TO REPLACE EVERYTHING IN YOUR SCRIPT.JS FILE
+
 console.log("hello, world!");
 console.log("sup bitch?");
 
-// $(document).ready(function() {
-//  $('.hamburger').click(function() {
-//    $('.nav-links').slideToggle(); // This will toggle the visibility with a nice slide effect!
-    // Alternatively, you could use .toggle() for a simple show/hide
-    // $('.nav-links').toggle();
-//  });
-// });
-
 //COPYRIGHT
-    const copyrightYearSpan = document.getElementById('copyright-year');
-    const currentYear = new Date().getFullYear();
-    copyrightYearSpan.textContent = currentYear;
+const copyrightYearSpan = document.getElementById('copyright-year');
+const currentYear = new Date().getFullYear();
+copyrightYearSpan.textContent = currentYear;
 
 //NAVBAR Hide links after click on small screens
- // Find the checkbox element by its ID
-  const menuToggle = document.getElementById('menu-toggle');
+// Find the checkbox element by its ID
+const menuToggle = document.getElementById('menu-toggle');
 
-  // Find all the navigation links within your menu
-  const navLinks = document.querySelectorAll('a.nav-links');
+// Find all the navigation links within your menu
+const navLinks = document.querySelectorAll('a.nav-links');
 
-  // Loop through each of the navigation links
-  navLinks.forEach(link => {
+// Loop through each of the navigation links
+navLinks.forEach(link => {
     // Add a 'click' event listener to each one
     link.addEventListener('click', () => {
-      // When a link is clicked, set the checkbox to 'unchecked'
-      // This will trigger your CSS to hide the menu again! ✨
-      menuToggle.checked = false;
+        // When a link is clicked, set the checkbox to 'unchecked'
+        // This will trigger your CSS to hide the menu again! ✨
+        if (menuToggle) {
+            menuToggle.checked = false;
+        }
     });
-  });
+});
   
 //BACK TO TOP BUTTON
 // Get the button:
@@ -39,9 +35,9 @@ let mybutton = document.getElementById("back-to-top-bttn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (mybutton && (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)) {
     mybutton.style.display = "block";
-  } else {
+  } else if (mybutton) {
     mybutton.style.display = "none";
   }
 }
@@ -58,8 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Select all containers with the .posts-grid class
     const postGrids = document.querySelectorAll('.links-links');
 
-    // Our "Art Palette" of styles! 🎨
-    // Each object has the image URL and its matching background color.
     const borderStyles = [
         { id: 'borderBlue', url: 'url("/assets/Border-blue.png")', backgroundColor: '#BDE7FF' },
         { id: 'borderGreen', url: 'url("/assets/Border-green.png")', backgroundColor: '#BFEBAC' },
@@ -67,17 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 'borderPink', url: 'url("/assets/Border-pink.png")', backgroundColor: '#FFD0DE' },
 		{ id: 'borderPurple', url: 'url("/assets/Border-purple.png")', backgroundColor: '#F1CBFF' },
 		{ id: 'borderYellow', url: 'url("/assets/Border-yellow.png")', backgroundColor: '#FDFFBD' },
-        // Add as many unique image/color pairs as you like!
     ];
 
     postGrids.forEach(grid => {
-        // Find all the links we want to style inside this grid
         const linksToStyle = grid.querySelectorAll('li a');
-        
-        // This makes a "copy" of our styles that we can safely remove items from
         let availableStyles = [...borderStyles];
 
-        // This is the updated part of your JS script
 		linksToStyle.forEach(link => {
 			if (availableStyles.length === 0) {
 				availableStyles = [...borderStyles];
@@ -86,11 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			const randomIndex = Math.floor(Math.random() * availableStyles.length);
 			const randomStyle = availableStyles[randomIndex];
 
-			// THIS IS THE BIG CHANGE!
-			// Instead of setting link.style, we set a data attribute.
 			link.dataset.borderStyle = randomStyle.id; 
-    
-			// We can still set the background color here if we want.
 			link.style.backgroundColor = randomStyle.backgroundColor;
 
 			availableStyles.splice(randomIndex, 1);
@@ -98,57 +83,70 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//GALLERY 
+// --- CORRECTED GALLERY SECTION STARTS HERE ---
 document.addEventListener('DOMContentLoaded', () => {
 
     const galleryContainer = document.querySelector('.gallery-container');
-    // The same value as our grid-auto-rows in CSS
-    const rowHeight = 10; 
-    // The same value as our 'gap' in CSS (e.g., 1rem is often 16px)
-    const rowGap = 16; 
-
-    function resizeGridItem(item) {
-        // 'item' is now the <a> tag
-        const image = item.querySelector('img');
-        
-        const applyResize = () => {
-            // We get the height of the figure element inside the link
-            const figure = item.querySelector('.gallery-item');
-            const itemHeight = figure.clientHeight;
-            
-            // Calculate how many of our tiny rows the item needs to span
-            const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
-            
-            // Apply the style to the <a> tag itself
-            item.style.gridRowEnd = 'span ' + rowSpan;
-        };
-
-        // We need to wait for the image to load to get its true height
-        image.addEventListener('load', applyResize);
-
-        // A fallback for cached images that might not fire the 'load' event
-        if (image.complete) {
-            applyResize();
-        }
+    // If there's no gallery on the page, stop running the script.
+    if (!galleryContainer) {
+        return;
     }
 
-    // Get all the gallery links and apply the resize function
-    const allItems = galleryContainer.querySelectorAll('.custom-lightbox-trigger');
-    allItems.forEach(resizeGridItem);
+    // This is our new and improved function that reads the gap size from your CSS!
+    function resizeGridItem(item) {
+        const grid = document.querySelector('.gallery-container');
+        const rowHeight = parseInt(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        const rowGap = parseInt(getComputedStyle(grid).getPropertyValue('gap'));
+
+        const image = item.querySelector('img');
+        if (!image) return; // Safety check
+
+        const itemHeight = image.getBoundingClientRect().height;
+        const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
+        item.style.gridRowEnd = 'span ' + rowSpan;
+    }
+
+    // This is the part that correctly loops through all gallery items.
+    const allItems = document.querySelectorAll('.custom-lightbox-trigger');
+    allItems.forEach(item => {
+        const image = item.querySelector('img');
+        if (image) {
+            // This small function runs the resize logic for this one item.
+            const applyResize = () => {
+                resizeGridItem(item);
+            };
+            // We tell the browser to run our resize function ONLY after the image has loaded.
+            image.addEventListener('load', applyResize);
+            // This is a fallback for images that loaded so fast they are already in the browser's cache.
+            if (image.complete) {
+                applyResize();
+            }
+        }
+    });
+
+    // We also want to re-calculate everything if the browser window changes size.
+    window.addEventListener('resize', () => {
+        allItems.forEach(resizeGridItem);
+    });
 
 });
+// --- CORRECTED GALLERY SECTION ENDS HERE ---
+
 
 //MODAL LIGHTBOX
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. GET ALL THE ELEMENTS WE NEED ---
     const modal = document.querySelector('#my-modal');
+    // Safety check: if the modal isn't on the page, don't run the script
+    if (!modal) {
+        return;
+    }
+
     const modalImage = modal.querySelector('.modal-image');
     const closeButton = modal.querySelector('.modal-close-btn');
     const overlay = modal.querySelector('.modal-overlay');
     const triggerLinks = document.querySelectorAll('.custom-lightbox-trigger');
 
-    // -- Our NEW elements for the info --
     const infoTrigger = document.querySelector('.modal-info-trigger');
     const infoPanel = document.querySelector('.modal-img-info');
     const modalTitle = document.querySelector('#modal-title');
@@ -157,57 +155,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalSize = document.querySelector('#modal-size');
 
 
-    // --- 2. FUNCTIONS TO OPEN/CLOSE THE MODAL ---
     function openModal() {
         modal.classList.add('modal-active');
     }
 
     function closeModal() {
         modal.classList.remove('modal-active');
-        // Hide the info panel when the modal closes
-        infoPanel.classList.remove('is-visible'); 
+        if (infoPanel) {
+            infoPanel.classList.remove('is-visible');
+        }
     }
 
-
-    // --- 3. ADD EVENT LISTENERS ---
-
-    // Loop through all trigger links and add a click event
     triggerLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the link from navigating
+            event.preventDefault(); 
 
-            // --- THIS IS THE NEW MAGIC! ---
-            // Get all the data from the link's "data backpack"
             const title = this.dataset.title;
             const date = this.dataset.date;
             const medium = this.dataset.medium;
             const size = this.dataset.size;
-            
-            // Get the image URL
             const imageUrl = this.getAttribute('href');
 
-            // --- UPDATE THE MODAL CONTENT ---
             modalImage.setAttribute('src', imageUrl);
             modalTitle.textContent = title;
             modalDate.textContent = date;
             modalMedium.textContent = medium;
             modalSize.textContent = size;
 
-            // Open the modal!
             openModal();
         });
     });
 
-    // Add click listeners to close the modal
-    closeButton.addEventListener('click', closeModal);
-    overlay.addEventListener('click', closeModal);
+    if(closeButton) closeButton.addEventListener('click', closeModal);
+    if(overlay) overlay.addEventListener('click', closeModal);
 
-    // Listener for the info button
-    infoTrigger.addEventListener('click', () => {
-        infoPanel.classList.toggle('is-visible');
-    });
+    if(infoTrigger) {
+        infoTrigger.addEventListener('click', () => {
+            infoPanel.classList.toggle('is-visible');
+        });
+    }
 
-    // Pro-tip: Also close the modal with the "Escape" key!
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeModal();
