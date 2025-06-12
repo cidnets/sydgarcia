@@ -24,27 +24,6 @@
 	padding: 0.5rem;
 	z-index: 100;
 }
-.navbar a.active {
-	background-color: var(--purple);
-	border-image: var(--border-purple);
-	color: var(--white);
-}
-.navbar a.active::before,
-.navbar a.active::after {
-	width: var(--tiny-heart-size);
-	height: var(--tiny-heart-size);
-	content: '';
-}
-.navbar a.active::before {
-	background-image: var(--tiny-heart-pink);
-}
-.navbar a.active::after {
-	background-image: var(--tiny-heart-peach);
-}
-.navbar a.active:hover {
-	background-image: none;
-	cursor: default;
-}
 .logo {
 	-webkit-box-ordinal-group: 2;
 	order: 2;
@@ -68,6 +47,50 @@
 	background-color: var(--text);
 }
 
+.navbar a,
+.nav-links {
+	position: relative;
+}
+.navbar a.active {
+	background-color: var(--purple);
+	border-image: var(--border-purple);
+	color: var(--white);
+}
+.navbar a.active::before,
+.navbar a.active::after,
+.nav-links::before,
+.nav-links::after {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: var(--tiny-heart-size);
+	height: var(--tiny-heart-size);
+	content: '';
+}
+.navbar a.active::before,
+.nav-links::before {
+	left: 2px;
+	background-image: var(--tiny-heart-pink);
+}
+.navbar a.active::after,
+.nav-links::after {
+	right: 2px;
+	background-image: var(--tiny-heart-peach);
+}
+.navbar a.active:hover {
+	background-image: none;
+	cursor: default;
+}
+.nav-links::before,
+.nav-links::after {
+	opacity: 0;
+}
+.navbar a.active::before,
+.navbar a.active::after,
+.nav-links:hover::before,
+.nav-links:hover::after {
+	opacity: 1;
+}
 .nav-links {
 	width: 8rem;
 	height: 54px;
@@ -86,19 +109,6 @@
 	background-color: white;
 	background-image: var(--white-dot-bg);
 	color: var(--purple-2);
-}
-.nav-links:hover::before,
-.nav-links:hover::after {
-	margin: 0 0;
-	width: var(--tiny-heart-size);
-	height: var(--tiny-heart-size);
-	content: '';
-}
-.nav-links:hover::before {
-	background-image: var(--tiny-heart-pink);
-}
-.nav-links:hover::after {
-	background-image: var(--tiny-heart-peach);
 }
 .nav-links:nth-of-type(n + 4) {
 	-webkit-box-ordinal-group: 2;
